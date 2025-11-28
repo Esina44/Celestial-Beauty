@@ -4,7 +4,7 @@ export default function Navbar() {
   return (
     <>
       <div className="sticky top-0">
-        <div className="bg-stone-500 text-white text-center p-2">
+        <div className="bg-stone-500 text-stone-600 text-white text-center p-2">
           <a href="" className="text-sm font-bold pr-12">
             Get the Glow You Deserve ✨ Shop Now!
           </a>

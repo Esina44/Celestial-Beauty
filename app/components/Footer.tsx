@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <>
-      <footer className="bg-stone-50 p-5">
+      <footer className="bg-stone-50 p-5 text-stone-600">
         <div className=" p-3 flex gap-5  justify-between">
           <div className="">
             <h1 className="font-bold text-2xl">Celestial Beauty</h1>
@@ -13,21 +13,27 @@ export default function Footer() {
 
           <ul className="flex flex-col gap-1">
             <h1 className="text-2xl font-bold">Navigation</h1>
-            <li className="text-xl">Shop</li>
+            <li className="text-xl u-animate-underline">Shop</li>
             <li className="text-xl">About</li>
-            <li className="text-xl">Login</li>
-            <li className="text-xl">Contact</li>
+            <li className="text-xl">Features</li>
+            <li className="text-xl">Search</li>
+            <li className="text-xl">Account</li>
+            <li className="text-xl">Cart</li>
           </ul>
 
           <div className="flex flex-col gap-1">
             <h1 className="font-bold text-2xl">Links</h1>
             <div className="w-10">
-              <a href="https://github.com/Esina44">
+              <a
+                href="https://github.com/Esina44"
+                className="flex items-center"
+              >
                 <img
                   src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
                   alt=""
                   className="rounded-full"
                 />
+                <h1>Github</h1>
               </a>
             </div>
             <div className="w-10">
