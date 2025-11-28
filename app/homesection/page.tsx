@@ -1,12 +1,17 @@
 import Image from "next/image";
 
 export default function HomeSection() {
-
   return (
     <>
       <section>
-        <div>
-          <img src="/home.png.jpg" alt="home image" className="w-full h-[50%]"/>
+        <div className="w-full">
+          <Image
+            src="/assets/homepicture.png"
+            alt="home image"
+            height={500}
+            width={900}
+            className="w-full h-auto"
+          ></Image>
         </div>
       </section>
     </>
