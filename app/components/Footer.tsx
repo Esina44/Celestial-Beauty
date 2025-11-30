@@ -26,7 +26,7 @@ export default function Footer() {
             <div className="w-10">
               <a
                 href="https://github.com/Esina44"
-                className="flex items-center"
+                className="flex items-center text-xl"
               >
                 <img
                   src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"
@@ -37,21 +37,29 @@ export default function Footer() {
               </a>
             </div>
             <div className="w-10">
-              <a href="https://www.instagram.com/esina_poon_/">
+              <a
+                className="flex items-center text-xl"
+                href="https://www.instagram.com/esina_poon_/"
+              >
                 <img
                   className="rounded-full"
                   src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxBzH8UEnwhZ3xdq-cC4D9_dK4nu_Cjk9p-Q&s"
                   alt=""
                 />
+                <h1>Instagram</h1>
               </a>
             </div>
             <div className="w-10">
-              <a href="https://www.linkedin.com/in/esina-rantija-8876a3356/">
+              <a
+                className="flex items-center text-xl gap-1"
+                href="https://www.linkedin.com/in/esina-rantija-8876a3356/"
+              >
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRokEYt0yyh6uNDKL8uksVLlhZ35laKNQgZ9g&s"
-                  className="rounded-full"
+                  src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/2048px-Facebook_f_logo_%282021%29.svg.png"
+                  className="rounded-full text-xs"
                   alt=""
                 />
+                <h1>Facebook</h1>
               </a>
             </div>
           </div>
@@ -62,9 +70,15 @@ export default function Footer() {
               Stay glowing! Get the latest makeup tips, product launches, and
               exclusive offers delivered straight to your inbox.
             </p>
-            <div className="flex flex-col gap-3">
-              <input type="text" placeholder="Enter your email" className="" />
-              <button className="border  w-[40%]">Subscribe</button>
+            <div className="flex flex-col gap-3 mt-3">
+              <input
+                type="text"
+                placeholder="Enter your email"
+                className="bg-stone-300 h-10 rounded-xl p-2"
+              />
+              <button className="mt-1 hover:bg-stone-800 hover:text-white border rounded-xl h-10 w-[40%] cursor-pointer">
+                Shop Now
+              </button>
             </div>
           </div>
         </div>
