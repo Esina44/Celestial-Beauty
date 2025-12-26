@@ -1,48 +1,54 @@
 "use client";
-import { error } from "console";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-export default function Account() {
+export default function Register() {
   const router = useRouter();
 
-  const [loginData, setLoginData] = useState({
+  const [register, setRegister] = useState({
+    firstName: "",
+    lastName: "",
     email: "",
     password: "",
+    phone: "",
+    address: "",
   });
 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  const formChange = (
+  const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setLoginData((prev) => ({
+    setRegister((prev) => ({
       ...prev,
       [name]: value,
     }));
   };
+
   const formSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     setLoading(true);
 
     try {
-      const res = await fetch("/api/account", {
+      const res = await fetch("/api/register", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(loginData),
+        body: JSON.stringify(register),
       });
+
       const data = await res.json();
+
       if (!res.ok) {
-        setError(data.message || "Login Failed!!");
+        setError(data.message || "Registration Failed!!");
         return;
       }
 
-      router.push("/homesection");
+      router.push("/account");
     } catch {
-      setError("Something went wrong!!!!");
+      setError("Something went wrong!!!");
     } finally {
       setLoading(false);
     }
@@ -62,17 +68,36 @@ export default function Account() {
           />
         </div>
         <div className="p-5 w-2xl flex flex-col items-center justify-center shadow-xl">
-          <h1 className="text-4xl mb-3">Login</h1>
-
+          <h1 className="text-4xl mb-3">Create Account</h1>
           {error && <p className="text-red-600 mb-10">{error}</p>}
+          <div>
+            <input
+              type="text"
+              name="firstName"
+              value={register.firstName}
+              onChange={handleChange}
+              placeholder="First Name"
+              className="w-lg h-10 bg-white text-lg rounded-xl pl-4 mb-4"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="lastName"
+              value={register.lastName}
+              onChange={handleChange}
+              placeholder="Last Name"
+              className="w-lg h-10 bg-white text-lg rounded-xl pl-4 mb-4"
+            />
+          </div>
+
           <div>
             <input
               type="email"
               name="email"
-              value={loginData.email}
-              onChange={formChange}
+              value={register.email}
+              onChange={handleChange}
               placeholder="Email"
-              required
               className="w-lg h-10 bg-white text-lg rounded-xl pl-4 mb-4"
             />
           </div>
@@ -80,34 +105,51 @@ export default function Account() {
             <input
               type="password"
               name="password"
-              value={loginData.password}
-              onChange={formChange}
               id="Password"
+              value={register.password}
+              onChange={handleChange}
               placeholder="Password"
-              required
-              className="w-lg h-10 bg-white text-lg rounded-xl pl-4"
+              className="w-lg h-10 bg-white text-lg rounded-xl pl-4 mb-4"
             />
           </div>
+          <div>
+            <input
+              type="text"
+              name="phone"
+              value={register.phone}
+              onChange={handleChange}
+              placeholder="Phone Number"
+              className="w-lg h-10 bg-white text-lg rounded-xl pl-4 mb-4"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="address"
+              value={register.address}
+              onChange={handleChange}
+              placeholder="Address"
+              className="w-lg h-10 bg-white text-lg rounded-xl pl-4 mb-4"
+            />
+          </div>
+
           <div className="mt-5 mb-3">
             <button
               type="submit"
               disabled={loading}
               className="border text-sm h-8 w-20 rounded-full cursor-pointer hover:bg-white"
             >
-              {loading ? "Signing in...." : "Sign In"}
+              {loading ? "Registering..." : "Register"}
             </button>
           </div>
           <div className="text-center text-sm text-gray-600  mb-10">
-            <p className="mb-3 underline underline-offset-4">
-              <a href="#recover">Forgot your password?</a>
-            </p>
             <p>
-              Don't have an account?
+              Already have an account?
               <a
                 href="/account/register"
                 className="underline underline-offset-4"
               >
-                Sign Up
+                Sign In!
               </a>
             </p>
           </div>
