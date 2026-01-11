@@ -3,13 +3,14 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <>
-      <div className="px-4 sticky top-0">
-        <div className="bg-stone-500 text-stone-600 text-white text-center p-2 mb-2 rounded-t-sm">
+      <div className="fixed top-0 left-0 w-full z-50">
+        <div className="bg-stone-500 text-white text-center p-2 text-sm font-bold relative z-50">
           <a href="" className="text-sm font-bold pr-12">
             Get the Glow You Deserve ✨ Shop Now!
           </a>
         </div>
-        <nav className="flex justify-between p-7 shadow-2xl text-lg text-gray-600 uppercase md:text-lg sticky top-0 z-50 rounded-sm">
+
+        <nav className="flex justify-between items-center px-8 py-8 shadow-md bg-white text-gray-600 uppercase relative z-50">
           <div className="flex gap-8">
             <Link className="hover:underline" href="/shop">
               shop

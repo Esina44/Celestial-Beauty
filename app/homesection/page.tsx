@@ -10,32 +10,34 @@ export default function HomeSection() {
       link: "/shop",
     },
     {
-      title: "Foundation",
-      description: "Choose your shades",
-      image: "/assets/makeup.jpg",
+      title: "Lipstick",
+      description: "Choose your Favourate lipsticks",
+      image: "/assets/lipstick.png",
       link: "/shop",
     },
     {
       title: "Foundation",
       description: "Choose your shades",
-      image: "/assets/makeup.jpg",
+      image: "/assets/sunscreen.jpg",
       link: "/shop",
     },
   ];
   return (
     <>
-      <section className="px-4 ">
-        <div className="rounded-sm relative w-full h-[650px] rounded-xl mb-10">
+      <section className=" ">
+        <div className="relative w-full h-[550px] rounded-xl mb-10">
           <Image
-            src="/assets/coverpage1.jpg"
+            src="/assets/coverpage3.png"
             alt="home image"
             fill
             className="rounded-lg"
           ></Image>
           <div className="absolute bottom-10 left-6 flex flex-col gap-4">
-            <p className="text-3xl text-gray-500">
+            <h1 className="text-3xl text-gray-600">
               Glow Like you are Celestial!
-            </p>
+            </h1>
+            <p></p>
+
             <Link href="/shop">
               <button className="border border-gray-500 px-20 py-4 text-gray-500 rounded-full uppercase text-sm cursor-pointer hover:bg-orange-50 transition">
                 Find Your Glow
@@ -44,11 +46,11 @@ export default function HomeSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10 text-gray-600">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-10 p-4 text-gray-600">
           {cards.map((card, index) => (
             <div
               key={index}
-              className="rounded-2xl shadow-2xl hover:scale-105 transition-transform"
+              className="rounded-2xl shadow-2xl hover:scale-105 flex flex-col justify-center text-center transition-transform"
             >
               <Image
                 src={card.image}
@@ -67,13 +69,8 @@ export default function HomeSection() {
             </div>
           ))}
         </div>
-        <div>
-          <Image
-            src="/assets/home1.jpg"
-            alt="image"
-            height={800}
-            width={900}
-          ></Image>
+        <div className="bg-gray-50 grid grid-cols-2 p-6">
+          <img src="assets/home.jpg" className="w-full h-[500px]" alt="" />
         </div>
       </section>
     </>
