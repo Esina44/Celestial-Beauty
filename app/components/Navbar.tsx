@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <>
-      <div className="fixed top-0 left-0 w-full z-50">
+      <div className="sticky top-0 left-0 w-full z-50">
         <div className="bg-stone-500 text-white text-center p-2 text-sm font-bold relative z-50">
           <a href="" className="text-sm font-bold pr-12">
             Get the Glow You Deserve ✨ Shop Now!

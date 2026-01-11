@@ -1,4 +1,3 @@
-// app/shop/page.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -7,7 +6,7 @@ import { ProductCard } from "../components/ProductCard";
 interface Product {
   id: number;
   name: string;
-  price: string; // from DB as string
+  price: string;
   image_url?: string;
   slug: string;
 }

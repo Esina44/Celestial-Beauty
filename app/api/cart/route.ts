@@ -3,7 +3,6 @@ import { PrismaClient } from "@/app/generated/prisma";
 
 const prisma = new PrismaClient();
 
-// GET CART
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
   const userId = Number(searchParams.get("userId"));
@@ -20,7 +19,6 @@ export async function GET(req: Request) {
   return NextResponse.json(cart);
 }
 
-// ADD TO CART
 export async function POST(req: Request) {
   const { userId, productId } = await req.json();
 
@@ -28,7 +26,6 @@ export async function POST(req: Request) {
     where: { user_id: userId },
   });
 
-  // Create cart if not exists
   if (!cart) {
     cart = await prisma.cart.create({
       data: { user_id: userId },

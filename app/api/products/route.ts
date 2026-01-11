@@ -1,6 +1,5 @@
-// app/api/products/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@/app/generated/prisma"; // adjust path to your prisma client
+import { PrismaClient } from "@/app/generated/prisma";
 
 const prisma = new PrismaClient();
 
