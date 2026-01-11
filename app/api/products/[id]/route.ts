@@ -1,4 +1,4 @@
-// app/api/products/[slug]/route.ts
+// app/api/products/[id]/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@/app/generated/prisma";
 
@@ -6,13 +6,13 @@ const prisma = new PrismaClient();
 
 export async function GET(
   req: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: { id: number } }
 ) {
-  const { slug } = params;
+  const { id } = params;
 
   try {
     const product = await prisma.product.findUnique({
-      where: { slug },
+      where: { id },
     });
 
     if (!product)

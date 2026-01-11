@@ -9,7 +9,7 @@ export async function GET(req: NextRequest) {
     const products = await prisma.product.findMany({
       orderBy: { created_at: "desc" },
     });
-
+    console.log(products);
     return NextResponse.json(products);
   } catch (error) {
     console.error(error);
